@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- test mapper名字 -->
+<mapper namespace="test">
+<!-- 通过id查询 -->
+<select id="selecctById" parameterType="int" resultType="cn.nfzy.domain.user">
+select * from user where id=#{id}
+</select>
+<select id="selecctByName" parameterType="String" resultType="cn.nfzy.domain.user">
+select * from user where username=#{username}
+</select>
+<!-- 通过用户名模糊查询 -->
+<select id="selectUserListByName" parameterType="String" resultType="cn.nfzy.domain.user">
+   select * from user where username like #{username}
+ </select>
+ <!-- 第二种方式 -->
+<select id="selectUserListByName2" parameterType="String" resultType="cn.nfzy.domain.user">
+   select * from user where username like '%${value}%'
+ </select>
+ <!-- 查询所有的数据 -->
+ <select id="selectUser" resultType="cn.nfzy.domain.user">
+  select * from user
+ </select>
+<!-- 添加数据 -->
+<insert id="insertUser" parameterType="cn.nfzy.domain.user">
+ insert into user(username,password)values(#{username},#{password})
+ </insert>
+<!-- 修改数据 -->
+<update id="updateUser" parameterType="cn.nfzy.domain.user">
+  update user set
+  password=#{password} where id=#{id}
+ </update>
+<!-- 删除数据 -->
+<delete id="deleteUser" parameterType="cn.nfzy.domain.user">
+  delete from user where id=#{id}
+ </delete>
+ 
+</mapper>

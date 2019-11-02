@@ -54,7 +54,7 @@
 		</div>
 		<!--最下面部分-->
 		<div data-options="region:'south',border:false" style="height: 25px;">
-			<center>©2019-2059 广东南方职业学院&nbsp;&nbsp;&nbsp;软件技术</center>
+			<center>©2019-2059 南方学院&nbsp;&nbsp;&nbsp;软件技术</center>
 		</div>
 		<!--最右边部分-->
 		<div data-options="region:'east'," title="East" style="width: 100px;"></div>
